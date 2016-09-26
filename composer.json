@@ -1,5 +1,5 @@
 {
-	"name": "cakedc/migrations",
+	"name": "taalendigitaal/cakephp-plugin-migrations",
 	"description": "Migrations Plugin for CakePHP",
 	"type": "cakephp-plugin",
 	"keywords": ["cakephp","migrations"],
@@ -23,5 +23,8 @@
 	"require": {
 		"php": ">=5.2.8",
 		"composer/installers": "*"
+	},
+	"extra": {
+		"installer-name": "Migrations"
 	}
 }
