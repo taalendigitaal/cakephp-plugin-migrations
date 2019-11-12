@@ -532,26 +532,6 @@ class CakeMigration extends CakeObject {
 	}
 
 /**
- * This method will drop the specified foreign key from the specified table if the table and index exist in the information schema
- *
- */
-        protected function _dropForeignKeyIfExists($table, $index, $foreignKey){
-            return
-                $this->db->rawQuery(
-                    "IF EXISTS(
-                          SELECT *
-                          FROM INFORMATION_SCHEMA.STATISTICS
-                          WHERE INDEX_SCHEMA = DATABASE()
-                                AND TABLE_NAME='".$table."'
-                                AND INDEX_NAME = '".$index."')
-                    THEN
-                        ALTER TABLE `".$table."` DROP FOREIGN KEY `".$foreignKey."`;
-                        ALTER TABLE `".$table."` DROP INDEX `".$index."` ;
-                    END IF;"
-                );
-        }
-
-/**
  * This method will invoke the before/afterAction callbacks, it is good when
  * you need track every action.
  *
